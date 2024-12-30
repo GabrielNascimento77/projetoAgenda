@@ -1,0 +1,33 @@
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 my-3">
+                    <h1 class="text-center">Login</h1>
+
+                    <%- include('includes/messages') %>
+
+                    <%# Formulário de login %>
+                    <div class="col-lg">
+                        <form action="/login" method="post" class="forms">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">E-mail</label>
+                                <input type="email" name="email" class="form-control mt-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu e-mail">
+                                <small class="errorsEmail"></small>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="exampleInputPassword1">Senha</label>
+                                <input type="password" name="senha" class="form-control mt-2" id="exampleInputPassword1" placeholder="Digite sua senha">
+                                <small class="errorsSenha text-danger"></small>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-4">Entrar</button><br>
+                            <hr>
+                            <p>Ainda não tem uma conta? <a href="/cadastre-se">Cadastre-se!</a></p>
+                        </form>
+                    </div>
+            </div>
+        </div>
+
+<%- include('includes/footer') %>
